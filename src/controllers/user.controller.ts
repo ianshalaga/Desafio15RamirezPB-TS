@@ -74,6 +74,13 @@ class UserController {
       res.json(failureStatus(error.message));
     }
   }
+
+  async uploadDocumentsById(req: Request, res: Response) {
+    try {
+    } catch (error) {
+      res.json(failureStatus(error.message));
+    }
+  }
 }
 
 export default new UserController();

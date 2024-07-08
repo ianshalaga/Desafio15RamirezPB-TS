@@ -125,6 +125,10 @@ Enlace al repositorio de **GitHub** con el proyecto completo, sin la carpeta de 
 
 > - **swagger-ui-express** es un paquete que facilita la integración de **Swagger UI** en una aplicación **Express**. **Swagger UI** es una interfaz gráfica que permite interactuar con la **API** documentada, probar **endpoints** y explorar la especificación **OpenAPI** generada.
 
+- `npm i multer`
+
+> **Multer** es un **middleware** de **Node.js** para manejar la subida de archivos. Es ampliamente utilizado en aplicaciones **Express** y otras aplicaciones **Node.js** para gestionar la recepción de archivos a través de formularios **HTTP multipart/form-data**. **Multer** proporciona una forma sencilla y eficiente de manejar archivos subidos, permitiendo almacenar estos archivos en el servidor o manipularlos antes de guardarlos.
+
 ## devDependencies
 
 - `npm i nodemon -D`
@@ -164,6 +168,7 @@ Enlace al repositorio de **GitHub** con el proyecto completo, sin la carpeta de 
 - `npm i @types/mocha -D` (Definiciones de tipos de **TypeScript** para **mocha**)
 - `npm i @types/chai -D` (Definiciones de tipos de **TypeScript** para **chai**)
 - `npm i @types/supertest -D` (Definiciones de tipos de **TypeScript** para **supertest**)
+- `npm i @types/multer -D` (Definiciones de tipos de **TypeScript** para **multer**)
 
 > **TypeScript** dependencies.
 

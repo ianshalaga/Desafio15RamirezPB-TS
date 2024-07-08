@@ -4,6 +4,9 @@ import endpointAuth from "../middlewares/endpointAuth";
 
 const usersRouter: Router = Router();
 
+/** POST ENPOINTS */
+usersRouter.post("/:uid/documents", userController.uploadDocumentsById);
+
 /** PUT ENPOINTS */
 usersRouter.put(
   "/premium/:uid",
