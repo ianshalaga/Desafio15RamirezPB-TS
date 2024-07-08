@@ -77,6 +77,12 @@ class UserController {
 
   async uploadDocumentsById(req: Request, res: Response) {
     try {
+      const uid: string = req.params.uid;
+      const files = req.files;
+      console.log(files);
+      console.log(uid);
+      console.log("HOLIS");
+      res.status(200).json(successStatus);
     } catch (error) {
       res.json(failureStatus(error.message));
     }

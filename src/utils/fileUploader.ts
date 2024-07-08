@@ -4,13 +4,13 @@ import { rootPath } from "./paths";
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     if (file.fieldname === "profileImage") {
-      cb(null, rootPath + "/src/uploads/profiles");
+      cb(null, rootPath + "/public/uploads/profiles");
     } else if (file.fieldname === "productImage") {
-      cb(null, rootPath + "/src/uploads/products");
+      cb(null, rootPath + "/public/uploads/products");
     } else if (file.fieldname === "document") {
-      cb(null, rootPath + "/src/uploads/documents");
+      cb(null, rootPath + "/public/uploads/documents");
     } else {
-      cb(null, rootPath + "/src/uploads/others");
+      cb(null, rootPath + "/public/uploads/others");
     }
   },
   filename: (req, file, cb) => {

@@ -17,7 +17,7 @@ Con base en el proyecto que venimos desarrollando, toca solidificar algunos proc
 
 - Crear un **endpoint** en el **router** de usuarios **api/users/:uid/documents** con el método **POST** que permita subir uno o múltiples archivos. Utilizar el **middleware** de **Multer** para poder recibir los documentos que se carguen y actualizar en el usuario su **status** para hacer saber que ya subió algún documento en particular.
 
-  El **middleware** de **multer** deberá estar modificado para que pueda guardar en diferentes carpetas los diferentes archivos que se suban. Si se sube una imagen de perfil, deberá guardarlo en una carpeta **profiles**, en caso de recibir la imagen de un producto, deberá guardarlo en una carpeta **products**, mientras que ahora al cargar un documento, multer los guardará en una carpeta **documents**.
+- [x] El **middleware** de **multer** deberá estar modificado para que pueda guardar en diferentes carpetas los diferentes archivos que se suban. Si se sube una imagen de perfil, deberá guardarlo en una carpeta **profiles**, en caso de recibir la imagen de un producto, deberá guardarlo en una carpeta **products**, mientras que ahora al cargar un documento, multer los guardará en una carpeta **documents**.
 
 - Modificar el **endpoint** **/api/users/premium/:uid** para que sólo actualice al usuario a **premium** si ya ha cargado los siguientes documentos:
 
