@@ -6,16 +6,16 @@ import fileUploader from "../utils/fileUploader";
 const usersRouter: Router = Router();
 
 const uploadFields = fileUploader.fields([
-  { name: "profileImage", maxCount: 10 },
-  { name: "productImage", maxCount: 10 },
-  { name: "document", maxCount: 10 },
+  { name: "profiles", maxCount: 10 },
+  { name: "products", maxCount: 10 },
+  { name: "documents", maxCount: 10 },
 ]);
 
 /** POST ENPOINTS */
 usersRouter.post(
   "/:uid/documents",
   uploadFields,
-  userController.uploadDocumentsById
+  userController.uploadDocumentsByIdUser
 );
 
 /** PUT ENPOINTS */
@@ -26,5 +26,8 @@ usersRouter.put(
 );
 usersRouter.put("/reset-password", userController.resetPasswordUser);
 usersRouter.put("/create-new-password", userController.createNewPasswordUser);
+
+/** DELETE ENPOINTS */
+usersRouter.delete("/:uid/documents", userController.deleteDocumentsByIdUser);
 
 export default usersRouter;

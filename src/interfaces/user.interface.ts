@@ -3,7 +3,7 @@ export interface UserLogin {
   password: string;
 }
 
-interface UserDocument {
+export interface UserDocument {
   name: string;
   reference: string;
 }

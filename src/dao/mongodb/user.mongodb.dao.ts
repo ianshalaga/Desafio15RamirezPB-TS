@@ -1,7 +1,12 @@
 /** Model */
 import { usersModel } from "./models/user.mongodb.model";
 /** Interfaces */
-import { UserDAO, User, DbUser } from "../../interfaces/user.interface";
+import {
+  UserDAO,
+  User,
+  DbUser,
+  UserDocument,
+} from "../../interfaces/user.interface";
 
 class UserMongodbDAO implements UserDAO {
   constructor() {}
@@ -97,6 +102,30 @@ class UserMongodbDAO implements UserDAO {
         { _id: id },
         { $set: { last_connection: new Date() } }
       );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  // @@@@
+  async addDocumentsById(
+    id: string,
+    newDocuments: UserDocument[]
+  ): Promise<void> {
+    try {
+      await usersModel.updateOne(
+        { _id: id },
+        { $push: { documents: { $each: newDocuments } } }
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  // @@@@
+  async deleteDocumentsById(id: string) {
+    try {
+      await usersModel.updateOne({ _id: id }, { $set: { documents: [] } });
     } catch (error) {
       throw error;
     }

@@ -1,5 +1,5 @@
 import UserMongodbDAO from "../dao/mongodb/user.mongodb.dao";
-import { User } from "../interfaces/user.interface";
+import { User, UserDocument } from "../interfaces/user.interface";
 
 export default class UserService {
   dao: UserMongodbDAO;
@@ -42,5 +42,13 @@ export default class UserService {
 
   async updateLastConnectionById(id: string) {
     return await this.dao.updateLastConnectionById(id);
+  }
+
+  async addDocumentsById(id: string, newDocuments: UserDocument[]) {
+    return await this.dao.addDocumentsById(id, newDocuments);
+  }
+
+  async deleteDocumentsByIdUser(id: string) {
+    return await this.dao.deleteDocumentsById(id);
   }
 }
