@@ -77,6 +77,7 @@ class UserController {
     }
   }
 
+  // @@@@
   async uploadDocumentsByIdUser(req: Request, res: Response) {
     try {
       const linkBase: string = "http://localhost:8080/uploads/";
