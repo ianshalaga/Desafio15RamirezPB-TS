@@ -1,15 +1,9 @@
 import { Router } from "express";
 import userController from "../controllers/user.controller";
 import endpointAuth from "../middlewares/endpointAuth";
-import fileUploader from "../utils/fileUploader";
+import { uploadFields } from "../middlewares/uploadFields";
 
 const usersRouter: Router = Router();
-
-const uploadFields = fileUploader.fields([
-  { name: "profiles", maxCount: 10 },
-  { name: "products", maxCount: 10 },
-  { name: "documents", maxCount: 10 },
-]);
 
 /** POST ENPOINTS */
 usersRouter.post(

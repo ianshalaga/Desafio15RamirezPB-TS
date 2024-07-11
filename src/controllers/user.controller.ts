@@ -17,10 +17,29 @@ class UserController {
     try {
       const uid: string = req.params.uid;
       const dbUser: DbUser = await userService.getUserById(uid);
+      const requiredDocuments = [
+        "identificacion",
+        "comprobante-domicilio",
+        "comprobante-estado-cuenta",
+      ];
       let rol = "";
+      // user -> premium
       if (dbUser.rol === "user") {
-        rol = "premium";
+        const userDocuments = dbUser.documents.map((doc) =>
+          doc.name.split(".").slice(0, -1).join(".")
+        );
+        const hasAllDocuments = requiredDocuments.every((doc) =>
+          userDocuments.includes(doc)
+        );
+        if (hasAllDocuments) {
+          rol = "premium";
+        } else {
+          return res.status(400).json({
+            message: "El usuario no ha terminado de procesar su documentación.",
+          });
+        }
       }
+      // premium -> user
       if (dbUser.rol === "premium") {
         rol = "user";
       }
